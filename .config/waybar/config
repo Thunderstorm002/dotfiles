@@ -11,8 +11,8 @@
     // Choose the order of the modules
 
     "modules-left":[  "custom/launcher", "wlr/taskbar"],
-    "modules-center":["custom/media"],
-    "modules-right":["backlight", "battery",  "battery#bat2",  "idle_inhibitor", "custom/updater", "pulseaudio", "custom/snip", "custom/wallpaper", "tray", "clock", "custom/power"],
+    "modules-center":["custom/media", "clock"],
+    "modules-right":["idle_inhibitor", "custom/updater", "pulseaudio", "tray"],
     // Modules configuration
 
     "wlr/taskbar": {
@@ -106,7 +106,7 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon}",
-        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth": "Vol: {volume}% | Batt: {icon}",
         "format-bluetooth-muted": "{icon} {format_source}",
         "format-muted": "{format_source}",
         "format-source": "",
