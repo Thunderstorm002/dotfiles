@@ -42,10 +42,13 @@ bindsym $mod+q kill
 bindsym $mod+u exec --no-startup-id dmenu_recency
 # bindsym $mod+d exec --no-startup-id ulauncher
 bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+y exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
-bindsym $mod+Shift+y exec --no-startup-id greenclip clear
 bindsym $mod+Shift+n exec --no-startup-id "rofi -show p -modi p:/usr/bin/rofi-power-menu"
 bindsym $mod+p exec ebook-viewer
+# Clipboard settings
+exec_always --no-startup-id wl-paste --type text --watch cliphist store
+exec_always --no-startup-id wl-paste --type image --watch cliphist store
+bindsym $mod+y exec --no-startup-id cliphist list | rofi -dmenu | cliphist decode | wl-copy
+bindsym $mod+Shift+y exec --no-startup-id cliphist wipe
 
 # launch categorized menu
 #bindsym $mod+z exec --no-startup-id morc_menu
